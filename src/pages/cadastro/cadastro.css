@@ -103,8 +103,8 @@ input[type="password"] {
 .cadastro-button-custom {
     background-color: #f95600;
     color: white;
-    width: 100px;
-    padding: 10px;
+    width: 30%;
+    padding: 3%;
     border: none;
     border-radius: 5px;
     cursor: pointer;
