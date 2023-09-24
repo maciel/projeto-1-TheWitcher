@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './mapa.css';
-import Player from "../player/player";
-import musicaDeFundo from '../sounds/soundtrack.mp3';
-import quest from '../sounds/newquest.wav'
+import Player from "../../components/player/player";
+import musicaDeFundo from '../../sounds/soundtrack.mp3';
+import quest from '../../sounds/newquest.wav'
 import { Howl} from 'howler';
 
 function Mapa() {

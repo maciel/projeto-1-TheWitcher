@@ -1,11 +1,11 @@
 
 import './menu.css';
-import backgroundVideo from './assets/menu.mp4';
-import menuLogo from './assets/menuLogo.png';
+import backgroundVideo from '../../assets/menu.mp4';
+import menuLogo from '../../assets/menuLogo.png';
 import React, { useState } from 'react';
 import { Howl, Howler } from 'howler';
-import audio from './sounds/selecionar.mp3'
-import pressionar from './sounds/pressionar.wav'
+import audio from '../../sounds/selecionar.mp3'
+import pressionar from '../../sounds/pressionar.wav'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -22,10 +22,25 @@ function App() {
     const clickSound = new Howl({
       src: pressionar, // Substitua pelo caminho do seu outro arquivo de áudio
     });
-    const handleButtonClick = () => {
+    const toMap = () => {
       clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
       // Adicione qualquer lógica adicional aqui, se necessário
       navigate("/mapa");
+    };
+    const toLogin = () => {
+      clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
+      // Adicione qualquer lógica adicional aqui, se necessário
+      navigate("/login");
+    };
+    const toRegister = () => {
+      clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
+      // Adicione qualquer lógica adicional aqui, se necessário
+      navigate("/register");
+    };
+    const toBestiario = () => {
+      clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
+      // Adicione qualquer lógica adicional aqui, se necessário
+      navigate("/bestiario");
     };
     
     
@@ -48,16 +63,16 @@ function App() {
             </div>
             <div className='selecionaveis'>
               <div className="textos">
-                <button  className="botao-personalizado" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleButtonClick} >Login</button>
+                <button  className="botao-personalizado" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={toLogin} >Login</button>
               </div>
               <div className="textos">
-                <button className="botao-personalizado" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleButtonClick}>Mapa</button>
+                <button className="botao-personalizado" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={toMap}>Mapa</button>
               </div>
               <div className="textos">
-                <button className="botao-personalizado" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleButtonClick}>Bestiário</button>
+                <button className="botao-personalizado" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={toBestiario}>Bestiário</button>
               </div>
               <div className="textos">
-                <button className="botao-personalizado" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleButtonClick}>Criadores</button>
+                <button className="botao-personalizado" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={toRegister}>Registrar</button>
               </div>
             </div>
 

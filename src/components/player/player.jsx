@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import somDeMovimento from '../sounds/riding.wav'; // Importe o som de movimento específico aqui
-import somInicial from '../sounds/isso_ai_carpeado.mp3'; // Importe o som inicial aqui
-import boneco from '../assets/boneco.png';
+import somDeMovimento from '../../sounds/riding.wav'; // Importe o som de movimento específico aqui
+import somInicial from '../../sounds/isso_ai_carpeado.mp3'; // Importe o som inicial aqui
+import boneco from '../../assets/boneco.png';
 
 class Player extends Component {
   constructor(props) {

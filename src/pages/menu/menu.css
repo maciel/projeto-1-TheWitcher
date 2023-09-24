@@ -3,13 +3,13 @@
 
 @font-face {
   font-family: 'Bastarda';
-  src: url('./fonts/BastardaPlain.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
+  src: url('../../fonts/BastardaPlain.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'PF Din Text Cond Pro';
-  src: url('./fonts/PFDinTextCondPro-Regular.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
+  src: url('../../fonts/PFDinTextCondPro-Regular.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
   font-weight: normal;
   font-style: normal;
 }
