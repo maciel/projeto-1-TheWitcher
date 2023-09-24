@@ -1,0 +1,95 @@
+
+/* src/fontes.css */
+
+@font-face {
+  font-family: 'Bastarda';
+  src: url('./fonts/BastardaPlain.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PF Din Text Cond Pro';
+  src: url('./fonts/PFDinTextCondPro-Regular.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Resto do seu estilo CSS aqui */
+
+
+@keyframes piscar-borda {
+  0% {
+    border-color:rgb(202, 198, 198);
+  }
+  50% {
+    border-color: transparent; /* Ou a cor do contorno original */
+  }
+  100% {
+    border-color: rgb(202, 198, 198);
+  }
+}
+
+        
+
+body {
+    background-color:wheat;
+
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+
+}
+
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .aba {
+    margin-left: 10%;
+    background-color:black ;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-bottom: 8vh;
+  }
+  .botao-personalizado {
+    font-family: 'PF Din Text Cond Pro', sans-serif;
+    font-size: 30px;
+    color: rgb(202, 198, 198);
+    border: 4px solid black;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    transition: border 0.3s;
+    /* Outras propriedades de estilo para o botão, como cor de fundo e cor do texto, podem ser definidas aqui */
+  }
+  .selecionaveis{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .textos {
+    width: 100%;
+    margin-bottom: 1vh;
+    height: 9vh;
+  }
+  .botao-personalizado:hover {
+    animation: piscar-borda 1s linear infinite; /* Aplica a animação "piscar-borda" à borda do botão */
+  }
+  
+ 
+  

@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'PF Din Text Cond Pro';
+    src: url('../fonts/PFDinTextCondPro-Regular.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+body {
+    background-image: url('../assets/testemapa.jpg');
+    background-size: auto;
+}
+.mapaContainer {
+    position: relative;
+    text-align: center;
+    height: 100vh; /* Isso faz com que o container ocupe toda a altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerButton {
+    font-family: 'PF Din Text Cond Pro', sans-serif;
+    display: inline-block;
+    padding: 20px 60px;
+    background-color: #ac8f53;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.centerButton:hover {
+    opacity: 0.8;
+}
+
+.centerButton:disabled {
+    display: none;
+}
