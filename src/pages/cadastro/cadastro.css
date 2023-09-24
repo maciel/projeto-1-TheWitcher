@@ -1,0 +1,127 @@
+/* Cadastro.css */
+
+.cadastro-container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    position: relative;
+    z-index: 0;
+}
+
+.cadastro-border {
+    
+    background-image: linear-gradient(to right bottom,
+            #f95600,
+            #ff6c00,
+            #ff801a,
+            #ff945f,
+            #ffa677);
+    border: none;
+    font-size: 1.2em;
+    border-radius: 0;
+    padding: 4px;
+    transition: border-top-left-radius 0.2s ease-in,
+        border-top-right-radius 0.2s ease-in 0.15s,
+        border-bottom-right-radius 0.2s ease-in 0.3s,
+        border-bottom-left-radius 0.2s ease-in 0.45s,
+        padding 0.2s ease-in;
+    z-index: 1;
+}
+
+.cadastro-form {
+    
+    background-color: #1d1d1d;
+    /* Cor de fundo escura */
+    border-radius: 0;
+    padding: 40px 60px;
+    transition: all 0.2s ease-in,
+        border-top-left-radius 0.2s ease-in,
+        border-top-right-radius 0.2s ease-in 0.15s,
+        border-bottom-right-radius 0.2s ease-in 0.3s,
+        border-bottom-left-radius 0.2s ease-in 0.45s,
+        padding 0.2s ease-in;
+    z-index: -1;
+    box-shadow: -25px -10px 30px -5px rgba(249, 86, 0, 0.7),
+        25px -10px 30px -5px rgba(255, 108, 0, 0.7),
+        25px 10px 30px -5px rgba(255, 128, 26, 0.7),
+        -25px 10px 30px -5px rgba(255, 148, 95, 0.7);
+}
+
+.cadastro-border:hover .cadastro-form {
+    box-shadow: -15px -10px 30px -5px rgba(249, 86, 0, 0.8),
+        15px -10px 30px -5px rgba(255, 108, 0, 0.8),
+        15px 10px 30px -5px rgba(255, 128, 26, 0.8),
+        -15px 10px 30px -5px rgba(255, 148, 95, 0.8);
+}
+
+@font-face {
+    font-family: 'witcher';
+    src: url('../../Login/font/die\ nasty.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cadastro-title {
+    font-family: 'witcher';
+    color: red;
+}
+
+.cadastro-subtitle {
+    font-family: 'witcher';
+    color: red;
+}
+
+
+
+
+/* chatGpt */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.cadastro-input {
+    margin-bottom: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.cadastro-container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastro-button-custom {
+    background-color: #f95600;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cadastro-button-custom:hover {
+    background-color: red;
+}
+
+.cadastro-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Coloca a imagem atrás do conteúdo */
+    opacity: 1;
+    /* Ajuste a opacidade conforme necessário */
+}

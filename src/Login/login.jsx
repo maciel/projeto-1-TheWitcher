@@ -21,7 +21,7 @@ function LoginScreen() {
     return (
 
         <div className="login-container">
-            <img src={fundo} alt="Minha Imagem" className="background-image" />
+             <img src={fundo} alt="Minha Imagem" className="background-image" /> 
             <div className='login-border'>
                 <div className="login-form">
                     <img src={logo} alt="logo" className='img-logo' />
