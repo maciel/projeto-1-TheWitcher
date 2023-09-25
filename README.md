@@ -36,7 +36,7 @@ Funcionalidades:
 
 **Sobre o Projeto:**
 
-O projeto consiste no desenvolvimento de 6 telas que contem: login, registro, bestiario, mapa e feedback.
+O projeto consiste no desenvolvimento de 6 telas que contem: menu, login, registro, bestiario, mapa e feedback.
 Ele foi densenvolvido com base no universo de the witcher (mais especificamente the witcher 3). Para o proximo projeto, o mapa 
 terá por meio da navegaçao de Geralt e seu cavalo (Carpeado) a aparição de monstros e de especies de fauna e flora que compoõe o universo, permitindo o jogador ganhar nivel e ouro.
 Além disso, na pagina de bestiario, será possível o jogar ver toda a historia de todos os monstros de the witcher e quais são os possíveis itens, poções e sinais que ele pode usar para derrotar o monstro especifico.
