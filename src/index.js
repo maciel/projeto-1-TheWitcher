@@ -5,13 +5,17 @@ import App from './App';
 import LoginScreen from './Login/login';
 import reportWebVitals from './reportWebVitals';
 import Cadastro from './cadastro/cadastro';
+import Bestiario from './bestiario/bestiario';
+import Formulario from './formulário/formulario';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Cadastro/>
+    {/* <Cadastro/>   */}
     {/* <LoginScreen/> */}
+    {/* <Bestiario/> */}
+    <Formulario/>
   </React.StrictMode>
 );
 

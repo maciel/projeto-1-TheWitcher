@@ -1,0 +1,43 @@
+.formulario-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20vh;
+    border: 2px solid black; /* Adiciona uma borda sólida de 2px cinza */
+    padding: 20px; /* Adiciona um espaço interno de 20px */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    background: linear-gradient(to bottom, #35424a, #1a2327);
+  }
+  
+  .campo {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  button.botao-centralizado {
+    /* padding: 10px 20px;
+    display: block;
+    margin: 0 auto;
+    font-family: monospace; */
+    font-size: 1.5rem;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #35424a;
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+    margin: 35px 0;
+  }
+  
