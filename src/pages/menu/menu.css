@@ -1,20 +1,19 @@
 
-/* src/fontes.css */
 
 @font-face {
   font-family: 'Bastarda';
-  src: url('../../fonts/BastardaPlain.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
+  src: url('../../fonts/BastardaPlain.ttf') format('truetype'); 
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'PF Din Text Cond Pro';
-  src: url('../../fonts/PFDinTextCondPro-Regular.ttf') format('truetype'); /* Verifique a extensão do arquivo e o caminho */
+  src: url('../../fonts/PFDinTextCondPro-Regular.ttf') format('truetype'); 
   font-weight: normal;
   font-style: normal;
 }
 
-/* Resto do seu estilo CSS aqui */
+
 
 
 @keyframes piscar-borda {
@@ -22,7 +21,7 @@
     border-color:rgb(202, 198, 198);
   }
   50% {
-    border-color: transparent; /* Ou a cor do contorno original */
+    border-color: transparent; 
   }
   100% {
     border-color: rgb(202, 198, 198);
@@ -75,7 +74,6 @@ body {
     width: 100%;
     height: 100%;
     transition: border 0.3s;
-    /* Outras propriedades de estilo para o botão, como cor de fundo e cor do texto, podem ser definidas aqui */
   }
   .selecionaveis{
     display: flex;
@@ -88,7 +86,7 @@ body {
     height: 9vh;
   }
   .botao-personalizado:hover {
-    animation: piscar-borda 1s linear infinite; /* Aplica a animação "piscar-borda" à borda do botão */
+    animation: piscar-borda 1s linear infinite; 
   }
   .mute-button {
     color: white;

@@ -10,56 +10,55 @@ import { useNavigate } from 'react-router-dom';
 function App() {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
-  const [isMuted, setIsMuted] = useState(false); // Estado para controlar o mudo
+  const [isMuted, setIsMuted] = useState(false); 
 
   const sound = new Howl({
     src: audio,
-    mute: isMuted, // Use o estado para definir se o som está mudo ou não
+    mute: isMuted, 
   });
 
   useEffect(() => {
-    // Certifique-se de limpar o som ao desmontar o componente
+    
     return () => {
       sound.unload();
     };
-  }, [isMuted]); // Dependência do estado de mudo
+  }, [isMuted]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
-    sound.play(); // Inicia a reprodução do som
+    sound.play(); 
   };
 
   const clickSound = new Howl({
     src: pressionar,
-    mute: isMuted, // Use o estado para definir se o som está mudo ou não
+    mute: isMuted, 
   });
 
   const toMap = () => {
-    clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
-    // Adicione qualquer lógica adicional aqui, se necessário
+    clickSound.play(); 
     navigate("/mapa");
   };
 
   const toLogin = () => {
-    clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
-    // Adicione qualquer lógica adicional aqui, se necessário
+    clickSound.play(); 
+    
     navigate("/login");
   };
 
   const toRegister = () => {
-    clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
-    // Adicione qualquer lógica adicional aqui, se necessário
+    clickSound.play(); 
+    
     navigate("/register");
   };
 
   const toBestiario = () => {
-    clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
-    // Adicione qualquer lógica adicional aqui, se necessário
+    clickSound.play(); 
+
     navigate("/bestiario");
   };
   const toFeedback = () => {
-    clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
-    // Adicione qualquer lógica adicional aqui, se necessário
+    clickSound.play(); 
+   
     navigate("/formulario");
   };
 
@@ -93,7 +92,7 @@ function App() {
           </div>
           <div className='mute-button'>
             <button onClick={() => setIsMuted(!isMuted)} className="mute-button">
-              {isMuted ? 'Ativar Som' : 'Mutar Som e Vídeo'} {/* Texto do botão baseado no estado de mudo */}
+              {isMuted ? 'Ativar Som' : 'Mutar Som e Vídeo'} 
             </button>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import somDeMovimento from '../../sounds/riding.wav'; // Importe o som de movimento específico aqui
-import somInicial from '../../sounds/isso_ai_carpeado.mp3'; // Importe o som inicial aqui
+import somDeMovimento from '../../sounds/riding.wav'; 
+import somInicial from '../../sounds/isso_ai_carpeado.mp3'; 
 import boneco from '../../assets/boneco.png';
 
 class Player extends Component {
@@ -18,10 +18,10 @@ class Player extends Component {
     this.audioMovimento = new Audio(somDeMovimento);
     this.audioMovimento.loop = true;
     this.audioInicial = new Audio(somInicial);
-    this.windowWidth = window.innerWidth; // Largura da janela do navegador
-    this.windowHeight = window.innerHeight; // Altura da janela do navegador
-    this.playerWidth = 50; // Largura do personagem (ajuste conforme necessário)
-    this.playerHeight = 100; // Altura do personagem (ajuste conforme necessário)
+    this.windowWidth = window.innerWidth;
+    this.windowHeight = window.innerHeight; 
+    this.playerWidth = 50; 
+    this.playerHeight = 100; 
   }
 
   componentDidMount() {
@@ -107,9 +107,9 @@ class Player extends Component {
       const { playerX, playerY, xDirection, yDirection } = prevState;
 
       const minX = 0;
-      const maxX = this.windowWidth - this.playerWidth; // Subtrai a largura do personagem
+      const maxX = this.windowWidth - this.playerWidth; 
       const minY = 0;
-      const maxY = this.windowHeight - this.playerHeight; // Substitua playerHeight pelo valor correto
+      const maxY = this.windowHeight - this.playerHeight; 
 
       let newPlayerX = playerX + xDirection * this.step;
       let newPlayerY = playerY + yDirection * this.step;

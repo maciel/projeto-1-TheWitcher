@@ -17,10 +17,10 @@ function Mapa() {
             setAudioStarted(true);
             setShowPlayer(true);
         }
-        clickSound.play(); // Inicia a reprodução do som quando o botão é clicado
+        clickSound.play(); 
     };
     const clickSound = new Howl({
-        src: quest, // Substitua pelo caminho do seu outro arquivo de áudio
+        src: quest, 
       });
      
     return (
