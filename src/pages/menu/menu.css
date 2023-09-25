@@ -32,7 +32,7 @@
         
 
 body {
-    background-color:wheat;
+    background-color: black;
 
 }
 
@@ -89,6 +89,15 @@ body {
   }
   .botao-personalizado:hover {
     animation: piscar-borda 1s linear infinite; /* Aplica a animação "piscar-borda" à borda do botão */
+  }
+  .mute-button {
+    color: white;
+  border-radius: 2cm;
+    background-color: black;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
   }
   
  

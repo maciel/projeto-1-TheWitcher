@@ -4,6 +4,8 @@ import App from './pages/menu/App';
 import Mapa from './pages/mapa/mapa';
 import LoginScreen from './Login/login';
 import Cadastro from './pages/cadastro/cadastro';
+import Formulario from './formulário/formulario'
+import Bestiario from './bestiario/bestiario'
 
 function Rotas() {
     return (
@@ -13,6 +15,9 @@ function Rotas() {
                 <Route path="/mapa" element={<Mapa/>}/>
                 <Route path="/register" element={<Cadastro/>}/>
                 <Route path="/login" element={<LoginScreen/>}/>
+                <Route path="/formulario" element={<Formulario/>}/>
+                <Route path="/bestiario" element={<Bestiario/>}/>
+
                 
 
             </Routes>

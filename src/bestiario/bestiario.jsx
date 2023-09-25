@@ -7,6 +7,8 @@ import Chevron from './chevron.svg'
 function Bestiario() {
     
     const [toggle, setToggle] = useState(false)
+    const [toggledois, setToggledois] = useState(false)
+    const [toggletres, setToggletres] = useState(false)
     const [heightEl, setHeightEl] = useState();
 
     const refHeight = useRef()
@@ -18,6 +20,12 @@ function Bestiario() {
 
     const toggleState = () => {
         setToggle(!toggle)
+    }
+    const toggleStatedois = () => {
+        setToggledois(!toggledois)
+    }
+    const toggleStatetres = () => {
+        setToggletres(!toggletres)
     }
 
     console.log(toggle);
@@ -32,7 +40,7 @@ function Bestiario() {
                    Level: 50
                 </div>
             </header>
-        <section className='container'>
+        <section className='containers'>
             <img src={fundo} alt="Minha Imagem" className="cadastro-background-image" />
             <div className='div-esquerda'>
                 <div className='accordion'>
@@ -46,21 +54,21 @@ function Bestiario() {
                             SubItens
                         </p>
                     </div>
-                    <button onClick={toggleState} className='accordion-visible'>
+                    <button onClick={toggleStatedois} className='accordion-visible'>
                         <span>Monstros</span>
-                        <img className={toggle && "active"} src={Chevron} />
+                        <img className={toggledois && "active"} src={Chevron} />
                     </button>
-                    <div className={toggle ? 'accordion-toggle animated':'accordion-toggle'} style={{height: toggle ? `${heightEl}` : "0px"}}
+                    <div className={toggledois ? 'accordion-toggle animated':'accordion-toggle'} style={{height: toggledois ? `${heightEl}` : "0px"}}
                     ref={refHeight}>
                         <p>
                             Subitens
                         </p>
                     </div>
-                    <button onClick={toggleState} className='accordion-visible'>
+                    <button onClick={toggleStatetres} className='accordion-visible'>
                         <span>Armas</span>
-                        <img className={toggle && "active"} src={Chevron} />
+                        <img className={toggletres && "active"} src={Chevron} />
                     </button>
-                    <div className={toggle ? 'accordion-toggle animated':'accordion-toggle'} style={{height: toggle ? `${heightEl}` : "0px"}}
+                    <div className={toggletres ? 'accordion-toggle animated':'accordion-toggle'} style={{height: toggletres ? `${heightEl}` : "0px"}}
                     ref={refHeight}>
                         <p>
                             Subitens
