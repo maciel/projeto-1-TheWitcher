@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';4885
 import './login.css';
 import fundo from './img/witcher_icon_by_slajter_d921uc9-fullview.png'
 // import fundo from './img/planoFundocortado.png'
