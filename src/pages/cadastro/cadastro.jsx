@@ -1,29 +1,47 @@
 // Cadastro.js
-
-import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import './cadastro.css'; // Importe o arquivo CSS
 import fundo from '../../Login/img/FundoAni.gif'
-class Cadastro extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            nome: '',
-            email: '',
-            senha: '',
-        };
+import axios from 'axios';
+function Cadastro() {
+    const navigate = useNavigate();
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [user, setUser] = useState()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:5000/cadastro', {
+                nome,
+                email,
+                senha,
+            });
+            alert('Usuário cadastrado com sucesso!');
+            console.log(response.data);
+            setUser(true)
+            console.log(user)
+            const token = response.data.token
+            
+            localStorage.setItem('authenticated', 'true')
+            localStorage.setItem("token", `${token}`);
+            localStorage.setItem('user', JSON.stringify(response.data.usuario))
+             
+            console.log(`${token}`)
+            console.log(localStorage.getItem('authenticated'))
+            // console.log(response.data.usuario.id)
+            navigate("/")
+        } catch (error) {
+            console.error('Erro ao cadastrar usuário:', error);
+            alert('Erro ao cadastrar usuário.');
+        }
+
     }
 
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
-    };
-
-    handleSubmit = (e) => {
-        e.preventDefault();
-        // Lógica para enviar o formulário para o servidor ou realizar ações necessárias
-    };
-
-    render() {
-        return (
+        return(
             <div>
                 <div className="cadastro-container">
                     <img src={fundo} alt="Minha Imagem" className="cadastro-background-image" />
@@ -31,15 +49,15 @@ class Cadastro extends Component {
                         <div className='cadastro-form'>
                             <h2 className='cadastro-title'>Cadastro</h2>
                             <p className='cadastro-subtitle'>Seja bem-vindo a caçada</p>
-                            <form onSubmit={this.handleSubmit}>
+                            <form onSubmit={handleSubmit}>
                                 <div className='cadastro-input'>
                                     <label className='cadastro-subtitle' htmlFor="nome">Nome:</label>
                                     <input
                                         type="text"
                                         id="nome"
                                         name="nome"
-                                        value={this.state.nome}
-                                        onChange={this.handleChange}
+                                        value={nome}
+                                        onChange={(e) => setNome(e.target.value)}
                                     />
                                 </div>
                                 <div className='cadastro-input'>
@@ -48,8 +66,8 @@ class Cadastro extends Component {
                                         type="email"
                                         id="email"
                                         name="email"
-                                        value={this.state.email}
-                                        onChange={this.handleChange}
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
                                 <div className='cadastro-input'>
@@ -58,8 +76,8 @@ class Cadastro extends Component {
                                         type="password"
                                         id="senha"
                                         name="senha"
-                                        value={this.state.senha}
-                                        onChange={this.handleChange}
+                                        value={senha}
+                                        onChange={(e) => setSenha(e.target.value)}
                                     />
                                 </div>
                                 <div className='cadastro-container-button'>
@@ -75,7 +93,5 @@ class Cadastro extends Component {
 
 
         );
-    }
 }
-
-export default Cadastro;
+export default Cadastro; 

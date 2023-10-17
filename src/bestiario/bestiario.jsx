@@ -3,6 +3,7 @@ import './bestiario.css';
 import urso from "./img/bear.png";
 import fundo from "./img/upscale.png"
 import Chevron from './chevron.svg'
+import { useNavigate } from 'react-router-dom';
 
 function Bestiario() {
     
@@ -10,12 +11,14 @@ function Bestiario() {
     const [toggledois, setToggledois] = useState(false)
     const [toggletres, setToggletres] = useState(false)
     const [heightEl, setHeightEl] = useState();
+    const navigate = useNavigate();
 
     const refHeight = useRef()
 
     useEffect(() => {
         console.log(refHeight);
         setHeightEl(`${refHeight.current.scrollHeight}px`)
+        if (localStorage.getItem('authenticated') != "true") navigate('/login');
     }, [])
 
     const toggleState = () => {

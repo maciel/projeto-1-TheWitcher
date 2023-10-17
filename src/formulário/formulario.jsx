@@ -1,7 +1,15 @@
-import React from 'react';
+
 import './formulario.css';
 import fundo from "./img/fundo_formulário.jpg"
+import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 const Formulario = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem('authenticated') != "true") navigate('/login');
+}, [])
+
   return (
     
     <div className="formulario-container">
