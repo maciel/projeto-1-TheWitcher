@@ -18,9 +18,17 @@ const Mapa = () => {
     const [selectedMonster, setSelectedMonster] = useState(null);
     const [playerLevel, setPlayerLevel] = useState(0);
     const [defeatedMonsters, setDefeatedMonsters] = useState([]);
+    const [isDaytime, setIsDaytime] = useState(true); // Estado para verificar se é de dia ou de noite
 
     const navigate = useNavigate();
+    useEffect(() => {
+        const now = new Date();
+        const currentHour = now.getHours();
 
+        // Se a hora estiver entre 6 e 18, é considerado dia
+        const isDay = currentHour >= 6 && currentHour < 18;
+        setIsDaytime(isDay);
+    }, []);
     useEffect(() => {
         if (localStorage.getItem('authenticated') !== "true") navigate('/login');
     }, [navigate]);
@@ -30,7 +38,7 @@ const Mapa = () => {
         const initialNumMonsters = 10; // Por exemplo, 10 monstros iniciais
         placeItems(initialNumMonsters);
     }, []);
-
+    
     const startAudio = () => {
         if (!audioStarted) {
             const audioMusicaFundo = new Audio(musicaDeFundo);
@@ -101,13 +109,18 @@ const Mapa = () => {
        
     }, []);
     useEffect(() => {
-        if (playerLevel >= 30 ) {
-            document.body.classList.add('nivel-30');
+        if (playerLevel >= 30) {
+            if (isDaytime) {
+                document.body.classList.add('nivel-30-dia');
+                document.body.classList.remove('nivel-30-noite');
+            } else {
+                document.body.classList.add('nivel-30-noite');
+                document.body.classList.remove('nivel-30-dia');
+            }
         } else {
-            document.body.classList.remove('nivel-30');
+            document.body.classList.remove('nivel-30-dia', 'nivel-30-noite');
         }
-    }, [playerLevel]);
-    
+    }, [playerLevel, isDaytime]);
 
     const [visibleMapFraction, setVisibleMapFraction] = useState(0.25);
 

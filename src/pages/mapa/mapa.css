@@ -23,9 +23,16 @@ body {
 body.nivel-15 {
     background-image: url('../../assets/mapa-15.png'); /* Substitua 'nova-imagem-de-fundo.jpg' pelo caminho da nova imagem */
 }
-body.nivel-30 {
-    background-image: url('../../assets/mapa-30.jpg'); /* Substitua 'nova-imagem-de-fundo.jpg' pelo caminho da nova imagem */
+/* Seus estilos CSS existentes... */
+
+body.nivel-30-dia {
+    background-image: url('../../assets/mapa-30-dia.jpg'); /* Imagem de fundo para o nível 30 durante o dia */
 }
+
+body.nivel-30-noite {
+    background-image: url('../../assets/mapa-30-noite.jpg'); /* Imagem de fundo para o nível 30 durante a noite */
+}
+
 
 
 .mapaContainer {
