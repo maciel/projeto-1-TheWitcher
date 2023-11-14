@@ -6,13 +6,27 @@
 }
 
 
-body {
+/* body {
     background-image: url('../../assets/testemapa.jpg');
     background-size: cover;
     max-width: 100%;
     height: auto;
 
+} */
+body {
+    background-image: url('../../assets/testemapa.jpg');
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
 }
+
+body.nivel-15 {
+    background-image: url('../../assets/mapa-15.png'); /* Substitua 'nova-imagem-de-fundo.jpg' pelo caminho da nova imagem */
+}
+body.nivel-30 {
+    background-image: url('../../assets/mapa-30.jpg'); /* Substitua 'nova-imagem-de-fundo.jpg' pelo caminho da nova imagem */
+}
+
 
 .mapaContainer {
 

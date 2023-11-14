@@ -4,7 +4,10 @@ PROJETO 1 - DESENVOLVIDO POR CAIO MACIEL - LEVI CORREIA - LUCAS MORRELLO.
 1 - Clona o repositorio por meio de: https://github.com/maciel/projeto-1-TheWitcher
 2 - Utilize o instalador de pacotes Yarn para instalar as dependencias do projeto por meio do comando "Yarn install" no terminal
 3 - Inicie o Projeto por meio do comando "Yarn start" no terminal
-4 - De nota 10 para o grupo =)
+4 - Clone o Back-end por meio de : https://github.com/maciel/back-end-SCOM
+5 - Abra o projeto Back - end e inicie por meio do comando "npm run dev"
+6 - Teste o registro, autenticação, feedback no Front-End
+7 - De nota 10 para o grupo =)
 O Projeto:
 
 Quantidade de paginas: 6;

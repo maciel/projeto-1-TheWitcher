@@ -42,13 +42,14 @@ function LoginScreen() {
             localStorage.setItem('authenticated', 'true')
             localStorage.setItem("token", `${token}`);
             localStorage.setItem('user', JSON.stringify(response.data.usuario))
-             
             console.log(`${token}`)
             console.log(localStorage.getItem('authenticated'))
             // console.log(response.data.usuario.id)
+            
             navigate("/")
         } catch (error) {
             if (!error?.response) {
+                console.log(error)
                 setError("Erro ao acessar o servidor");
             } else if (error.response.status == 401) {
                 setError("Usuário ou senha inválida")
