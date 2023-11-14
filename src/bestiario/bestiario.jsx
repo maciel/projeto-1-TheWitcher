@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './bestiario.css';
 import urso from "./img/bear.png";
+import bruxa from "../image/monsters/bruxa.png"
 import fundo from "./img/upscale.png"
 import Chevron from './chevron.svg';
 import { useNavigate } from 'react-router-dom';
