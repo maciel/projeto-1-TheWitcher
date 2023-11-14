@@ -1,12 +1,27 @@
 import React, { useState,useEffect,useRef } from 'react';
 import './bestiario.css';
 import urso from "./img/bear.png";
+import bruxa from "../image/monsters/bruxa.png"
 import fundo from "./img/upscale.png"
 import Chevron from './chevron.svg'
 import { useNavigate } from 'react-router-dom';
 
+
+
 function Bestiario() {
+        
+    function changeImage(fileName) {
+        let img = document.querySelector('#bannerImage');
+        img.setAttribute('src', fileName);  
+
+        const changeImage = (fileName) => {
+            console.log('Changing image to:', fileName);
+            let img = document.querySelector('#bannerImage');
+            img.setAttribute('src', fileName);  
+        };
     
+    }
+
     const [toggle, setToggle] = useState(false)
     const [toggledois, setToggledois] = useState(false)
     const [toggletres, setToggletres] = useState(false)
@@ -63,9 +78,9 @@ function Bestiario() {
                     </button>
                     <div className={toggledois ? 'accordion-toggle animated':'accordion-toggle'} style={{height: toggledois ? `${heightEl}` : "0px"}}
                     ref={refHeight}>
-                        <p>
-                            Subitens
-                        </p>
+                        
+                        <button onClick={() => changeImage(urso)}>Urso</button><br/>
+                        <button onClick={() => changeImage(bruxa)}>Bruxa</button>
                     </div>
                     <button onClick={toggleStatetres} className='accordion-visible'>
                         <span>Armas</span>
@@ -80,7 +95,7 @@ function Bestiario() {
                 </div>
             </div>
             <div className='div-meio'>
-                <img src={urso}/>
+                <img id="bannerImage" src={urso}/>
             </div>
             <div className='div-direita'>
                 <p>
