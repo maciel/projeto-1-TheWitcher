@@ -11,6 +11,43 @@ function Cadastro() {
     const [senha, setSenha] = useState('');
     const [user, setUser] = useState()
 
+
+    const handleEntrada = async (userId) => {
+        console.log('userId :>> ', userId);
+        try {
+            if (!userId) {
+                console.error("Usuário não autenticado");
+                return;
+            }
+            const response = await axios.post(
+                `http://localhost:5000/entrada/${parseInt(userId)}`
+            );
+
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    const handleGetData = async (userId) => {
+        try {
+            const response = await axios.get(
+                `http://localhost:5000/retorno/${userId}`
+            );
+
+            console.log(response.data);
+            // Aqui, você pode processar os dados recebidos da rota GET como necessário
+            const { primeiraEntrada, ultimaSaida } = response.data;
+
+            // Exemplo de como você pode usar esses dados no seu componente
+            console.log('Primeira Entrada:', primeiraEntrada);
+            console.log('Ultima Saida:', ultimaSaida);
+            localStorage.setItem('primeiraEntrada', primeiraEntrada)
+            localStorage.setItem("ultimaSaida", ultimaSaida);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -29,9 +66,13 @@ function Cadastro() {
             localStorage.setItem('authenticated', 'true')
             localStorage.setItem("token", `${token}`);
             localStorage.setItem('user', JSON.stringify(response.data.usuario))
-             
+            const userId = response.data.usuario.id;
+
             console.log(`${token}`)
             console.log(localStorage.getItem('authenticated'))
+            
+            await handleEntrada(userId);
+            await handleGetData(userId);
             // console.log(response.data.usuario.id)
             navigate("/")
         } catch (error) {
