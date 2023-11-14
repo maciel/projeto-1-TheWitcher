@@ -61,9 +61,7 @@ header {
 }
 
 /* ------------Div do meio------------ */
-.div-meio{
-    align-items: center;
-}
+
 .bruxa{
     width: 100%;
     border-radius: 10px;
@@ -73,8 +71,61 @@ header {
 }
 
 /* ------------Div da esquerda------------ */
+.accordion-toggle {
+    max-height: 300px; /* Defina a altura máxima conforme necessário */
+    font-size: 15px;
+    opacity: 0;
+    transition:  
+    opacity 0.3s ease-in-out,
+    height 0.3s 0.3s ease-in-out;
+    color: #333;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se necessário */
+    overflow-x: hidden; /* Remove a barra de rolagem horizontal */
+}
+
+.animated {
+    opacity: 1;
+    transition:  
+    height 0.3s ease-in-out,
+    opacity 0.3s 0.3s ease-in-out;
+}
+
+.accordion-toggle p {
+    margin: 0;
+    padding: 22px 15px;
+    pointer-events: none;
+    line-height: 1.3;
+}
+
+.accordion-toggle-buttons {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 10px;
+    max-height: 300px; /* Defina a altura máxima conforme necessário */
+}
+
+.accordion-toggle-buttons button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #0B3C35;
+    color: #DDF9F4;
+    cursor: pointer;
+    border: 1px solid #46F2D8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+}
 .accordion {
     max-width: 300px;
+    max-height: 5000px;
+   
     /* margin: 10px auto 0; */
     align-items: center;
     border-radius: 3px;
@@ -82,6 +133,7 @@ header {
 }
 
 .accordion-visible {
+    
     background: #0B3C35;
     width: 100%;
     color: #DDF9F4;
@@ -114,19 +166,10 @@ header {
     font-size: 18px;
 }
 
-.accordion-toggle {
-    height: 0px;
-    font-size: 15px;
-    opacity: 0;
-    transition:  
-    opacity 0.3s ease-in-out,
-    height 0.3s 0.3s ease-in-out;
-    color: #333;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
+
 
 .animated {
+    
     opacity: 1;
     transition:  
     height 0.3s ease-in-out,
@@ -149,3 +192,38 @@ header {
     /* background-color:red; */
 }
 
+.accordion-toggle-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ocupa todo o espaço disponível em largura */
+    justify-content: flex-start;
+    padding: 10px; /* Adapte conforme necessário */
+}
+
+/* Estilo para os botões dos monstros */
+.accordion-toggle-buttons button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px; /* Espaçamento entre os botões */
+    background-color: #0B3C35;
+    color: #DDF9F4;
+    cursor: pointer;
+    border: 1px solid #46F2D8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.accordion-toggle-buttons button.active {
+    background-color: #2E272E;
+}
+.div-meio {
+    align-items: center;
+    text-align: center; /* Centraliza o conteúdo na div-meio */
+}
+
+.div-meio img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da div-meio */
+    height: auto; /* Mantém a proporção da imagem */
+}

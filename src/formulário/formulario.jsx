@@ -11,29 +11,30 @@ const Formulario = () => {
   const [opiniao, setOpiniao] = useState(String)
 
   async function Envio() {
-  
+
 
     try {
-     
-        
-        if (nome && email && opiniao) {
-            const response = await axios.post('http://localhost:5000/formulario', {
-                "nome": nome,
-                "email": email,
-                "opiniao": opiniao
 
-            }).catch(err =>  alert(err.response.data));
-            if (response) {
-                alert("Opinião Registrada com Sucesso !!")
-                navigate("/");
-            }
 
-        } else alert('Preencha todos os campos!!')
+      if (nome && email && opiniao) {
+        const response = await axios.post('http://localhost:5000/formulario', {
+          "nome": nome,
+          "email": email,
+          "opiniao": opiniao
+
+        }).catch(err => alert(err.response.data));
+        if (response) {
+          alert("Opinião Registrada com Sucesso !!")
+          navigate("/");
+        }
+
+      } else alert('Preencha todos os campos!!')
 
     } catch (err) {
-        if(err?.response?.data)
+      console.log(err.response.data)
+      if (err?.response?.data)
         alert(err.response.data)
-        else alert(err.menssage)
+      else alert(err.menssage)
     }
 
 
@@ -41,20 +42,20 @@ const Formulario = () => {
 
 
 
-}
+  }
 
   useEffect(() => {
     if (localStorage.getItem('authenticated') != "true") navigate('/login');
-   
-}, [])
+
+  }, [])
 
   return (
-    
+
     <div className="formulario-container">
-        <img src={fundo} alt="Minha Imagem" className="cadastro-background-image" />
+      <img src={fundo} alt="Minha Imagem" className="cadastro-background-image" />
       <div className="campo">
         <label htmlFor="nome" >Nome:</label>
-        <input type="text" id="nome" name="nome"  onChange={(event => setNome(event.target.value))}/>
+        <input type="text" id="nome" name="nome" onChange={(event => setNome(event.target.value))} />
       </div>
 
       <div className="campo">
